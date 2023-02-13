@@ -1,0 +1,42 @@
+settings:
+  ignore_escaped_strings:
+  - \"true\"
+  advise_cla_signing: 
+  - \"true\"
+  frontmatter_not_escaped:
+  - \"true\"
+  popup_for_contributors:
+    enabled: true
+    message_text: WebFundamentals is transitioning to web.dev, and for now, this project is no longer accepting translations from contributors. Your translations will no longer be reviewed and sent as Pull Requests. Please stay tuned for future updates on the <a href=\"https://web.dev\">web.dev</a> project.
+
+    synchronize:
+  paths:
+  - source: .
+    exclude:
+    - \"locales2/*\"
+    - \"locales/*\"
+    - \"_redirects.yaml\"
+
+    pretranslate:
+  segments:
+    ignore_frontmatter_keys:
+    - \"layout\"
+    - \"permalink\"
+    - \"noindex\"
+    - \"date\"
+    - \"override\"
+    - \"codelabs\"
+    - \"tags\"
+    - \"authors\"
+
+    ignore_patterns:          \t
+    - !ruby/regexp /{%\\s?([a-zA-Z0-9\\.\\,\\-\\?\\'\\\"\\s]*)\\s?%}/    
+    - \"{# wf_(?!featured_snippet).*#}\"
+    - \"^(Note|Caution|Warning|Success|Key Point|Key Term|Objective|Dogfood): \"
+    - \"{:.*}\"
+    - \"{%.*%}\"
+
+  paths:
+  - source: .
+    include:
+    - \"pretrans5/*.*\"

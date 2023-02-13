@@ -29,7 +29,7 @@ settings:
     - \"tags\"
     - \"authors\"
 
-    ignore_patterns:          \t
+    ignore_patterns:
     - !ruby/regexp /{%\\s?([a-zA-Z0-9\\.\\,\\-\\?\\'\\\"\\s]*)\\s?%}/    
     - \"{# wf_(?!featured_snippet).*#}\"
     - \"^(Note|Caution|Warning|Success|Key Point|Key Term|Objective|Dogfood): \"
